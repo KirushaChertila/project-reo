@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <!--HeaderHero-->
+
+  <section class="header_hero">
+
+    <header>
+
+      <div class="top_bar">
+
+        <div class="left_block">
+          <img src="icons/logo.svg" alt="Логотип">
+          <span class="system_name">Федеральная государственная информационная <br> система учета твердых коммунальных отходов</span>
+        </div>
+
+        <div class="right_block">
+          <a href="" class="map_button">Карта объектов ФГИС УТКО</a>
+          <a href="" class="user_button">
+            <img src="icons/user.svg" alt="">
+            Личный кабинет
+          </a>
+          <button class="visibility_button"><img src="icons/glasses.svg" alt=""></button>
+        </div>
+      </div>
+
+      <div class="nav_bar">
+
+        <div class="menu_list">
+          <a href="" class="menu_item">Главная</a>
+          <a href="" class="menu_item">Новости</a>
+          <a href="" class="menu_item">Полезная информация</a>
+          <a href="" class="menu_item">Документация <img src="icons/dropArrow.svg" alt=""></a>
+          <a href="" class="menu_item">Обратная связь</a>
+        </div>
+
+        <div class="status_info">
+          система доступа
+          <img src="icons/greenStatus.svg" alt="Зелёный маркер">
+        </div>
+
+      </div>
+
+    </header>
+
+    <div class="info_block">
+      <h1>ФГИС УТКО</h1>
+      <p class="info_subtitle">является единственным источником достоверных данных о текущем <br> и перспективном состоянии отрасли на федеральном уровне. <br> <br> Это единая цифровая среда для учёта, контроля и сопровождения <br> процессов обращения с ТКО </p>
+
+      <div class="info_button_container">
+        <a href="" class="info_map_button">Карта фгис утко</a>
+        <a href="" class="info_user_button">Личный кабинет</a>
+      </div>
+
+    </div>
+
+    <img src="images/browserImg.png" alt="Браузер" class="browser_image">
+
+  </section>
+
+  <main>
+
+    <!--NEWS-->
+
+    <section class="news_section">
+
+    <div class="head_container">
+      <h2>Новости</h2>
+      <a href="" class="all_news_button">Все новости <img src="icons/arrowNext.svg" alt=""></a>
+    </div>
+
+    <div class="news_block">
+      
+      <div class="news_nav">
+        <button class="news_button" id="all_news">
+          Все новости
+        </button>
+        <button class="news_button" id="updates">
+          Обновление ФГИС УТКО
+        </button>
+        <button class="news_button" id="laws">
+          Законодательство
+        </button>
+      </div>
+
+      <div class="news_content">
+
+        <div class="main_news_content">
+          <div class="main_news_image_section">
+            <img src="images/newsImg.png" alt="" class="news_image">
+            <div class="main_news_container">
+              <div class="main_news_head">
+                Обновление ФГИС УТКО: расширена аналитика, добавлены <br> рейтинги МНО и новые функции мониторинга
+              </div>
+              <p class="news_text">
+                Внедрены обновления, направленные на развитие аналитических инструментов и мониторинга инфраструктуры.
+              </p>
+              <div class="date_line">
+                <span class="date">17 марта 2026</span>
+                <span class="tags">#Обновление функционала ФГИС УТКО</span>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="news_list">
+          <div class="news_container">
+            <div class="news_head">
+              Обновление ФГИС УТКО: расширена аналитика, добавлены рейтинги МНО и новые функции мониторинга
+            </div>
+            <p class="news_text">
+              Внедрены обновления, направленные на развитие аналитических инструментов и мониторинга инфраструктуры. Добавлены новые вкладки в дашборде субъекта, реализован рейтинг мест накопления отходов с учетом графиков вывоза, а также расширены возможности работы с картами, территориальными схемами и транспортом.
+            </p>
+            <div class="date_line">
+              <span class="date">17 марта 2026</span>
+              <span class="tags">#Обновление функционала ФГИС УТКО</span>
+            </div>
+          </div>
+
+          <div class="news_container">
+            <div class="news_head">
+              Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+            </div>
+            <p class="news_text">
+              Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей. 
+            </p>
+            <div class="date_line">
+              <span class="date">11 февраля 2026</span>
+              <span class="tags">#Обновление функционала ФГИС УТКО</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    </section>
+
+    <!--Information-->
+
+    <section class="information_section">
+      <h2>Полезная информация</h2>
+      <div class="information_block">
+        <div class="information_nav" id="information_nav">
+          <button class="information_button active" id="info_why">
+            Почему это важно
+          </button>
+          <button class="information_button" id="info_who">
+            Кто вносит информацию
+          </button>
+          <button class="information_button" id="info_when">
+            Какие данные и в какие сроки
+          </button>
+        </div>
+
+        <div class="information_content active" id="info_content_why">
+          <p class="information_text">
+            ФГИС УТКО обеспечивает учёт и контроль отходов с момента  образования до момента их переработки. Благодаря  камерам на площадках система «видит», убрали ли контейнер. <br> <br> Благодаря датчикам ГЛОНАСС и весовому контролю она «чувствует», не отклоняется ли мусоровоз от маршрута, чтобы сбросить отходы в лесу. А искусственный интеллект внутри системы «понимает», сколько ценного вторсырья можно спасти от захоронения. <br> <br> ФГИС УТКО это «всевидящее око» государства. Система обеспечивает прозрачность потоков, контроль за переработкой и борьбу с серыми схемами.
+          </p>
+          <img src="images/infoImg.png" alt="">
+        </div>
+
+        <div class="information_content" id="info_content_who">
+          <p class="information_text">
+            Что-то прикольное тут написано!
+          </p>
+          <img src="" alt="Какая-то картиночка">
+        </div>
+        <div class="information_content" id="info_content_when">
+          <p class="information_text">
+            Что-то прикольное тут написано!
+          </p>
+          <img src="" alt="Какая-то картиночка">
+        </div>
+
+      </div>
+    </section>
+
+    <!--Documentation-->
+
+    <section class="documentation_section">
+      <div class="head_container">
+          <h2 class="documentation_head_name">Документация</h2>
+          <p class="documentation_head_text">
+            Состав сведений, порядок и периодичность их размещения во ФГИС УТКО различаются в зависимости от роли участника. Документация распределена с учетом установленных задач и зон ответственности
+          </p>
+      </div>
+      <div class="documentation_list">
+        <button class="documentation_button">
+          <img src="" alt="">
+          Нормативно-правовые акты
+          <img src="" alt="">
+        </button>
+        <button class="documentation_button">
+          <img src="" alt="">
+          Технические материалы и API
+          <img src="" alt="">
+        </button>
+        <button class="documentation_button">
+          <img src="" alt="">
+          Методические материалы
+          <img src="" alt="">
+        </button>
+        <button class="documentation_button">
+          <img src="" alt="">
+          Проекты соглашений
+          <img src="" alt="">
+        </button>
+        <button class="documentation_button">
+          <img src="" alt="">
+          Электронная торговая площадка
+          <img src="" alt="">
+        </button>
+        <button class="documentation_button">
+          <img src="" alt="">
+          Мобильные приложения
+          <img src="" alt="">
+        </button>
+      </div>
+    </section>
+
+    <!--FAQ-->
+    
+    <section class="faq_section">
+      <h2>Частые вопросы</h2>
+      <div class="questions_list">
+    
+      <div class="question_item">
+        <button class="question_button">
+          <span class="question_title">Не получается войти в личный кабинет ФГИС УТКО</span>
+          <img class="icon-plus" src="icons/plusIcon.svg" alt="+">
+          <img class="icon-close" src="icons/closeIcon.svg" alt="x">
+        </button>
+        <div class="question_content">
+          <p>Вход в личный кабинет пользователя осуществляется через ЕСИА. На сайте выложена дополнительная инструкция по авторизации.</p>
+        </div>
+      </div>
+
+      <div class="question_item">
+        <button class="question_button">
+          <span class="question_title">На компьютере не открывается шаблон, выгружаемый из ФГИС УТКО</span>
+          <img class="icon-plus" src="icons/plusIcon.svg" alt="+">
+          <img class="icon-close" src="icons/closeIcon.svg" alt="x">
+        </button>
+        <div class="question_content">
+          <p>Вход в личный кабинет пользователя осуществляется через ЕСИА. На сайте выложена дополнительная инструкция по авторизации.</p>
+        </div>
+      </div>
+
+      <div class="question_item">
+        <button class="question_button">
+          <span class="question_title">Где в открытых источниках брать информацию о кадастровом номере источника образования ТКО</span>
+          <img class="icon-plus" src="icons/plusIcon.svg" alt="+">
+          <img class="icon-close" src="icons/closeIcon.svg" alt="x">
+        </button>
+        <div class="question_content">
+          <p>Вход в личный кабинет пользователя осуществляется через ЕСИА. На сайте выложена дополнительная инструкция по авторизации.</p>
+        </div>
+      </div>
+
+      <div class="question_item">
+        <button class="question_button">
+          <span class="question_title">Как настроить ЕГТС мусоровозов для их отражения в ФГИС УТКО</span>
+          <img class="icon-plus" src="icons/plusIcon.svg" alt="+">
+          <img class="icon-close" src="icons/closeIcon.svg" alt="x">
+        </button>
+        <div class="question_content">
+          <p>Вход в личный кабинет пользователя осуществляется через ЕСИА. На сайте выложена дополнительная инструкция по авторизации.</p>
+        </div>
+      </div>
+
+      <div class="question_item">
+        <button class="question_button">
+          <span class="question_title">Как интегрировать информационную систему поставщика информации и ФГИС УТКО?</span>
+          <img class="icon-plus" src="icons/plusIcon.svg" alt="+">
+          <img class="icon-close" src="icons/closeIcon.svg" alt="x">
+        </button>
+        <div class="question_content">
+          <p>Вход в личный кабинет пользователя осуществляется через ЕСИА. На сайте выложена дополнительная инструкция по авторизации.</p>
+        </div>
+      </div>
+
+    </div>
+
+    </section>
+
+    <!--Statistics-->
+
+    <section class="statistics_section">
+      <div class="statistics_head">
+        <h2>ФГИС УТКО в цифрах</h2>
+        <span class="statistics_warning">Данные актуальны по состоянию на 31.03.2026*</span>
+      </div>
+      <div class="statistics_container">
+        <div class="statistics_content">
+          <span class="statistics_number">8461</span>
+          <p class="statistics_text">Объекты размещения, обработки и утилизации отходов</p>
+        </div>
+        <div class="statistics_content">
+          <span class="statistics_number">25508</span>
+          <p class="statistics_text">Комплексы объектов инфраструктуры ТКО</p>
+        </div>
+        <div class="statistics_content">
+          <span class="statistics_number">1216920</span>
+          <p class="statistics_text">Мест накоплений отходов <br> (МНО)</p>
+        </div>
+        <div class="statistics_content">
+          <span class="statistics_number">68747810</span>
+          <p class="statistics_text">Источников образования отходом</p>
+        </div>
+      </div>
+    </section>
+
+    <!--Contacts-->
+
+    <section class="contacts_section">
+
+      <h2>Остались вопросы?</h2>
+      <div class="form_container">
+        <form>
+          <div class="form_double-inputs">
+            <div class="form_content">
+              <label for="name" class="form_name">Имя и фамилия <span class="required_star">*</span></label>
+              <input for="name" type="text" id="name" name="user_name" required class="input_container">
+            </div>
+            <div class="form_content">
+              <label for="email" class="form_name">Email <span class="required_star">*</span></label>
+              <input type="text" id="email" for="email" name="email" required class="input_container">
+            </div>
+          </div>
+          <div class="form_content">
+            <label for="company">Компания и ИНН <span class="required_star">*</span></label>
+            <input for="company" type="text" id="company_name" name="company" required class="input_container">
+          </div>
+          <div class="form_content">
+            <label for="theme">Выберите тему вопроса <span class="required_star">*</span></label>
+            <select for="theme" id="theme" name="theme_question" required class="input_container theme_selector">
+              <option value="" selected disabled hidden class="">Не выбрано</option>
+              <option value="purpose">Задача организации</option>
+              <option value="location">Местонахождение пунктов</option>
+              <option value="else">Другое</option>
+            </select>
+          </div>
+          <div class="form_content">
+            <label for="text">Текст обращения <span class="required_star">*</span></label>
+            <textarea name="form_text" id="form_text" required class="input_container" rows="1"></textarea>
+          </div>
+          <label class="file_upload-button">
+            <input type="file" style="display: none;" />
+            <img src="icons/attachedFile.svg" alt="">
+            Прикрепить файл(ы)
+          </label>
+          <div class="form_checkbox">
+            <input type="checkbox" id="agree" name="agree" value="yes" class="checkbox_option" required>
+            <label class="checkbox_text">Я подтверждаю ознакомление с <a href="" class="policy_link">Политикой обработки <br> персональных данных</a> и даю <a href="" class="policy_link">Согласие на обработку моих <br> персональных данных</a>.</label>
+          </div>
+          <button type="submit" class="form_submit_button">
+            ПОДАТЬ ЗАЯВКУ В ПОДДЕРЖКУ
+          </button>
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!--Footer-->
+  
+  <footer>
+    <div class="footer_container">
+      <div class="footer_head">
+        <a href=""><img src="icons/secondLogo.svg" alt=""></a>
+        <div class="footer_head_right">
+          <a href=""><img src="icons/telegram.svg" alt=""></a>
+          <a href=""><img src="icons/max.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="footer_nav">
+        <div class="nav_list">
+          <a href="" class="footer_nav_button">Главная</a>
+          <a href="" class="footer_nav_button">Новости</a>
+          <a href="" class="footer_nav_button">Полезная информация</a>
+          <a href="" class="footer_nav_button">Документация <img src="icons/dropArrowWhite.svg" alt=""></a>
+          <a href="" class="footer_nav_button">Обратная связь</a>
+        </div>
+        <span class="warning_text">При копировании гиперссылка на источник обязательна</span>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
