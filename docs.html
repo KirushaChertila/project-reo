@@ -11,7 +11,7 @@
 
   <!--HeaderHero-->
 
-  <section class="header_hero">
+  <section class="header_hero next_page">
 
     <header>
 
@@ -42,8 +42,8 @@
           <a href="index.html" class="menu_item">Главная</a>
           <a href="news.html" class="menu_item">Новости</a>
           <a href="" class="menu_item">Полезная информация</a>
-          <a href="docs.html" class="menu_item">Документация <img src="icons/dropArrow.svg" alt=""></a>
-          <a href="" class="menu_item">Обратная связь</a>
+          <a href="docs.html" class="menu_item">Документация</a>
+          <a href="" class="menu_item">API</a>
         </div>
 
         <div class="nav_bar-compact">
@@ -53,30 +53,26 @@
           </button>
         </div>
 
-        <div class="mobile_menu" id="mobile_menu">
-          <div class="mobile_menu-overlay" id="mobile_menu_overlay"></div>
-          <div class="mobile_menu-panel">
-            <button class="mobile_menu-close" id="mobile_menu_close">
-              <img src="icons/closeIcon.svg" alt="Закрыть меню">
-            </button>
-            <nav class="mobile_menu-list">
-              <a href="index.html" class="mobile_menu-link">Главная</a>
-              <a href="news.html" class="mobile_menu-link">Новости</a>
-              <a href="" class="mobile_menu-link">Полезная информация</a>
-              <a href="docs.html" class="mobile_menu-link">Документация</a>
-              <a href="" class="mobile_menu-link">Обратная связь</a>
-            </nav>
-          </div>
-        </div>
-
-        <div class="status_info">
-          система доступа
-          <img src="icons/greenStatus.svg" alt="Зелёный маркер">
-        </div>
+        <a href="" class="follow_button">
+          <img src="icons/maxBlackIcon.svg" alt="Макс">
+          <span class="follow_button-text">Наш канал в Максе</span>
+        </a>
 
       </div>
 
     </header>
+
+    <div class="mobile_menu">
+
+      <div class="mobile_menu_list">
+        <a href="index.html" class="mobile_menu_item">Главная</a>
+        <a href="news.html" class="mobile_menu_item">Новости</a>
+        <a href="" class="mobile_menu_item">Полезная информация</a>
+        <a href="docs.html" class="mobile_menu_item">Документация</a>
+        <a href="" class="mobile_menu_item">API</a>
+      </div>
+
+    </div>
 
     <div class="header_head">
       <div class="breadcrumbs">
@@ -109,66 +105,20 @@
             <p class="documentation_text">Здесь написано что-то невероятно умное!</p>
             <div class="documentation_documents-container">
               <div class="documentation_main-docs">
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
               </div>
             </div>
           </div>
@@ -188,66 +138,20 @@
             <p class="documentation_text">Здесь написано что-то невероятно умное!</p>
             <div class="documentation_documents-container">
               <div class="documentation_main-docs">
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
               </div>
             </div>
           </div>
@@ -267,70 +171,23 @@
             <p class="documentation_text">Здесь написано что-то невероятно умное!</p>
             <div class="documentation_documents-container">
               <div class="documentation_main-docs">
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
               </div>
             </div>
           </div>
-
         </div>
 
         <div class="documentation_item">
@@ -347,66 +204,20 @@
             <p class="documentation_text">Здесь написано что-то невероятно умное!</p>
             <div class="documentation_documents-container">
               <div class="documentation_main-docs">
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
               </div>
             </div>
           </div>
@@ -426,66 +237,20 @@
             <p class="documentation_text">Здесь написано что-то невероятно умное!</p>
             <div class="documentation_documents-container">
               <div class="documentation_main-docs">
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
               </div>
             </div>
           </div>
@@ -505,66 +270,20 @@
             <p class="documentation_text">Здесь написано что-то невероятно умное!</p>
             <div class="documentation_documents-container">
               <div class="documentation_main-docs">
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
-                <div class="documentation_main-docs-list">
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Какой-то файл</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                  <div class="main_doc-container">
-                    <img src="icons/fileIcon.svg" alt="Файл">
-                    <a href="">Руководство пользователя для роли Владелец объекта</a>
-                  </div>
-                </div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Какой-то файл</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
+                <div class="main_doc-container"><img src="icons/fileIcon.svg" alt="Файл"><a href="">Руководство пользователя для роли Владелец объекта</a></div>
               </div>
             </div>
           </div>
@@ -592,8 +311,8 @@
           <a href="index.html" class="footer_nav_button">Главная</a>
           <a href="news.html" class="footer_nav_button">Новости</a>
           <a href="" class="footer_nav_button">Полезная информация</a>
-          <a href="docs.html" class="footer_nav_button">Документация <img src="icons/dropArrowWhiteDoc.svg" alt=""></a>
-          <a href="" class="footer_nav_button">Обратная связь</a>
+          <a href="docs.html" class="footer_nav_button">Документация</a>
+          <a href="" class="footer_nav_button">API</a>
         </div>
         <span class="warning_text">При копировании гиперссылка на источник обязательна</span>
       </div>

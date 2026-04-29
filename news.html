@@ -11,7 +11,7 @@
 
   <!--HeaderHero-->
 
-  <section class="header_hero">
+  <section class="header_hero next_page">
 
     <header>
 
@@ -24,11 +24,15 @@
 
         <div class="right_block">
           <a href="" class="map_button">Карта объектов ФГИС УТКО</a>
+          <a href="" class="map_button mobile_map"><img src="icons/marker.svg" alt=""></a>
           <a href="" class="user_button">
             <img src="icons/user.svg" alt="">
-            Личный кабинет
+            <span class="user_button-text">
+              Личный кабинет
+            </span>
           </a>
           <button class="visibility_button"><img src="icons/glasses.svg" alt=""></button>
+          <button class="visibility_button small_button"><img src="icons/glassesTwo.svg" alt=""></button>
         </div>
       </div>
 
@@ -38,22 +42,419 @@
           <a href="index.html" class="menu_item">Главная</a>
           <a href="news.html" class="menu_item">Новости</a>
           <a href="" class="menu_item">Полезная информация</a>
-          <a href="docs.html" class="menu_item">Документация <img src="icons/dropArrow.svg" alt=""></a>
-          <a href="" class="menu_item">Обратная связь</a>
+          <a href="docs.html" class="menu_item">Документация</a>
+          <a href="" class="menu_item">API</a>
         </div>
 
-        <div class="status_info">
-          система доступа
-          <img src="icons/greenStatus.svg" alt="Зелёный маркер">
+        <div class="nav_bar-compact">
+          <button class="nav_bar-compact-btn">
+            <img src="icons/menu.svg" alt="Иконка меню" class="nav_bar-compact-img">
+            Меню
+          </button>
         </div>
+
+        <a href="" class="follow_button">
+          <img src="icons/maxBlackIcon.svg" alt="Макс">
+          <span class="follow_button-text">Наш канал в Максе</span>
+        </a>
 
       </div>
 
     </header>
 
+    <div class="mobile_menu">
+
+      <div class="mobile_menu_list">
+        <a href="index.html" class="mobile_menu_item">Главная</a>
+        <a href="news.html" class="mobile_menu_item">Новости</a>
+        <a href="" class="mobile_menu_item">Полезная информация</a>
+        <a href="docs.html" class="mobile_menu_item">Документация</a>
+        <a href="" class="mobile_menu_item">API</a>
+      </div>
+
+    </div>
+
+    <div class="header_head">
+      <div class="breadcrumbs">
+        <a href="index.html">Главная</a>
+        <img src="icons/breadcrumbsArrow.svg" alt="">
+        Новости
+      </div>
+      <h1>Новости</h1>
+    </div>
+
   </section>
 
   <main>
+
+    <section class="news-page_section">
+
+      <div class="news_block">
+        
+        <div class="news_nav">
+          <button class="news_button" id="all_news">
+            Все новости
+          </button>
+          <button class="news_button" id="updates">
+            Обновление ФГИС УТКО
+          </button>
+          <button class="news_button" id="laws">
+            Законодательство
+          </button>
+        </div>
+
+        <div class="news-page_list">
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Обновление функционала ФГИС УТКО</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Обновление функционала ФГИС УТКО</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Обновление функционала ФГИС УТКО</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Обновление функционала ФГИС УТКО</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Обновление функционала ФГИС УТКО</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Обновление функционала ФГИС УТКО</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-page_item">
+            <a href="news-detail.html" class="news-page_image-link">
+              <img src="images/newsImg.png" alt="Изображение новости">
+            </a>
+            <div class="news-page_info">
+              <a href="news-detail.html" class="news-page_title">
+                Расширен расчет балансовых показателей и доработаны функции для всех ролей пользователей
+              </a>
+              <p class="news-page_text">
+                Во ФГИС УТКО внедрены изменения, затрагивающие расчет плановых балансовых показателей, работу со схемами потоков и функциональность для различных категорий пользователей.
+              </p>
+              <div class="news-page_meta">
+                <span class="news-page_date">11 февраля 2026</span>
+                <span class="news-page_tags">#Законодательство</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Повторяй .news-page_item столько раз, сколько нужно -->
+
+        </div>
+
+        <div class="news-pagination">
+          <span class="pagination-info">Показано 1-10 из 63</span>
+          <nav class="pagination-controls">
+            <a href="#" class="pagination-arrow">Назад</a>
+            <a href="#" class="pagination-page">1</a>
+            <span class="pagination-dots">...</span>
+            <a href="#" class="pagination-page">10</a>
+            <a href="#" class="pagination-page active">11</a>
+            <a href="#" class="pagination-page">12</a>
+            <a href="#" class="pagination-page">13</a>
+            <a href="#" class="pagination-page">14</a>
+            <a href="#" class="pagination-page">15</a>
+            <a href="#" class="pagination-page">16</a>
+            <span class="pagination-dots">...</span>
+            <a href="#" class="pagination-page">26</a>
+            <a href="#" class="pagination-arrow">Далее</a>
+          </nav>
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
 
@@ -73,8 +474,8 @@
           <a href="index.html" class="footer_nav_button">Главная</a>
           <a href="news.html" class="footer_nav_button">Новости</a>
           <a href="" class="footer_nav_button">Полезная информация</a>
-          <a href="docs.html" class="footer_nav_button">Документация <img src="icons/dropArrowWhiteDoc.svg" alt=""></a>
-          <a href="" class="footer_nav_button">Обратная связь</a>
+          <a href="docs.html" class="footer_nav_button">Документация</a>
+          <a href="" class="footer_nav_button">API</a>
         </div>
         <span class="warning_text">При копировании гиперссылка на источник обязательна</span>
       </div>

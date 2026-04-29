@@ -1,144 +1,354 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Меню при разрешении <=1200px
-
-  const menuBtn = document.querySelector('.nav_bar-compact-btn');
-  const mobileMenu = document.getElementById('mobile_menu');
-  const closeBtn = document.getElementById('mobile_menu_close');
-  const overlay = document.getElementById('mobile_menu_overlay');
-  const menuLinks = document.querySelectorAll('.mobile_menu-link');
-
-  function openMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.add('active');
-    document.body.classList.add('menu-open');
-  }
-
-  function closeMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.remove('active');
-    document.body.classList.remove('menu-open');
-  }
-
-  if (menuBtn) menuBtn.addEventListener('click', openMenu);
+  // ============================================
+  // 1. МЕНЮ (работает на ВСЕХ страницах)
+  // ============================================
   
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-  if (overlay) overlay.addEventListener('click', closeMenu);
-  menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+  const header = document.querySelector('header');
+  const menuBtn = document.querySelector('.nav_bar-compact-btn');
+  const mobileMenu = document.querySelector('.mobile_menu');
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) {
-      closeMenu();
+  const updateHeaderHeight = () => {
+    if (header) {
+      document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+    }
+  };
+  updateHeaderHeight();
+  window.addEventListener('resize', updateHeaderHeight);
+
+  const toggleButtonState = (isOpen) => {
+    if (!menuBtn) return;
+    const img = menuBtn.querySelector('.nav_bar-compact-img');
+    const textNode = Array.from(menuBtn.childNodes).find(n => n.nodeType === 3 && n.textContent.trim() !== '');
+    
+    if (isOpen) {
+      img.src = 'icons/menuClose.svg';
+      img.alt = 'Закрыть меню';
+      textNode.textContent = ' Закрыть';
+    } else {
+      img.src = 'icons/menu.svg';
+      img.alt = 'Открыть меню';
+      textNode.textContent = ' Меню';
+    }
+  };
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = mobileMenu.classList.toggle('active');
+      document.body.classList.toggle('no-scroll', isOpen);
+      toggleButtonState(isOpen);
+    });
+
+    mobileMenu.querySelectorAll('.mobile_menu_item').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        toggleButtonState(false);
+      });
+    });
+  }
+
+  // ============================================
+  // 2. ПОДСВЕТКА АКТИВНОГО ПУНКТА МЕНЮ (на всех страницах)
+  // ============================================
+
+  const getActivePageName = () => {
+    let name = window.location.pathname.split('/').pop() || '';
+    name = name.split('?')[0].split('#')[0].toLowerCase().trim();
+    if (!name || name === '' || name === '/') name = 'index.html';
+    return name;
+  };
+
+  const activePage = getActivePageName();
+
+  document.querySelectorAll('.menu_item').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href === '' || href === '#' || href.startsWith('http')) return;
+    
+    const linkPage = href.split('/').pop().split('?')[0].split('#')[0].toLowerCase();
+    
+    if (linkPage === activePage) {
+      link.classList.add('active');
     }
   });
 
-  // Карусель при <779px у Новостей
-
-  const newsNav = document.querySelector('.news_nav');
+  // ============================================
+  // 3. КНОПКИ ФИЛЬТРА НОВОСТЕЙ (на всех страницах)
+  // ============================================
   
+  const filterBtns = document.querySelectorAll('.news_button');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isNewsPage = document.querySelector('.news-page_list');
+      
+      if (!isNewsPage) {
+        // На главной — переход на страницу новостей
+        window.location.href = 'news.html';
+        return;
+      }
+      // На news.html — фильтрация (обрабатывается ниже)
+    });
+  });
+
+  // ============================================
+  // 4. ТАБЫ "ПОЛЕЗНАЯ ИНФОРМАЦИЯ" (если есть на странице)
+  // ============================================
+  
+  const info_buttons = document.querySelectorAll('.information_button');
+  const info_contents = document.querySelectorAll('.information_content');
+  
+  if (info_buttons.length > 0 && info_contents.length > 0) {
+    
+    function updateContentState(btn) {
+      const isMobile = window.innerWidth <= 779;
+      
+      info_buttons.forEach(b => b.classList.remove('active'));
+      info_contents.forEach(c => {
+        c.classList.remove('active');
+        if (!isMobile) {
+          c.classList.remove('rounded-tl');
+          c.classList.remove('square-tr');
+        }
+      });
+
+      btn.classList.add('active');
+      const contentId = btn.id.replace('info_', 'info_content_');
+      const targetContent = document.getElementById(contentId);
+      
+      if (targetContent) {
+        targetContent.classList.add('active');
+        if (!isMobile) {
+          if (btn.id !== 'info_why') targetContent.classList.add('rounded-tl');
+          if (btn.id === 'info_when') targetContent.classList.add('square-tr');
+        }
+      }
+    }
+
+    info_buttons.forEach(btn => {
+      btn.addEventListener('click', () => updateContentState(btn));
+    });
+
+    window.addEventListener('resize', () => {
+      const activeBtn = document.querySelector('.information_button.active');
+      if (activeBtn) updateContentState(activeBtn);
+    });
+    
+    // Инициализация
+    const firstActive = document.querySelector('.information_button.active');
+    if (firstActive) updateContentState(firstActive);
+  }
+
+  // ============================================
+  // 5. АККОРДЕОН "ДОКУМЕНТАЦИЯ" (если есть на странице)
+  // ============================================
+  
+  const docItems = document.querySelectorAll('.documentation_item');
+  
+  if (docItems.length > 0) {
+    docItems.forEach(item => {
+      const btn = item.querySelector('.documentation_button');
+      const container = item.querySelector('.documentation_container');
+      
+      if (btn && container) {
+        btn.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+
+          // Закрываем все
+          docItems.forEach(otherItem => {
+            otherItem.classList.remove('active');
+            const otherContainer = otherItem.querySelector('.documentation_container');
+            if (otherContainer) otherContainer.classList.remove('active');
+          });
+
+          // Открываем текущий, если он был закрыт
+          if (!isActive) {
+            item.classList.add('active');
+            container.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+
+  // ============================================
+  // 6. FAQ АККОРДЕОН (если есть на странице)
+  // ============================================
+  
+  const questionItems = document.querySelectorAll('.question_item');
+  
+  if (questionItems.length > 0) {
+    questionItems.forEach(item => {
+      const button = item.querySelector('.question_button');
+      
+      if (button) {
+        button.addEventListener('click', () => {
+          const isOpen = item.classList.contains('active');
+          
+          // Закрываем все
+          questionItems.forEach(i => i.classList.remove('active'));
+          
+          // Открываем текущий, если он был закрыт
+          if (!isOpen) {
+            item.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+
+  // ============================================
+  // 7. ПАГИНАЦИЯ НОВОСТЕЙ (только если есть .news-page_list)
+  // ============================================
+
+  const newsList = document.querySelector('.news-page_list');
+  const paginationContainer = document.querySelector('.pagination-controls');
+  
+  if (!newsList || !paginationContainer) {
+    // Не на странице новостей с пагинацией — ничего не делаем
+    return; 
+  }
+  
+  // === Дальше код выполняется ТОЛЬКО на news.html ===
+  
+  // Карусель кнопок фильтра на мобильном
+  const newsNav = document.querySelector('.news_nav');
   function updateScrollHint() {
     if (window.innerWidth <= 779 && newsNav) {
       const isScrollable = newsNav.scrollWidth > newsNav.clientWidth;
       newsNav.classList.toggle('scrollable', isScrollable);
     }
   }
-  
   updateScrollHint();
   window.addEventListener('resize', updateScrollHint);
-  
   setTimeout(updateScrollHint, 100);
 
-  const info_buttons = document.querySelectorAll('.information_button');
-  const info_contents = document.querySelectorAll('.information_content');
+  // === ФИЛЬТР И ПАГИНАЦИЯ ===
+  const ITEMS_PER_PAGE = 10;
+  let currentPage = 1;
+  let currentFilter = 'all';
 
-  function updateContentState(btn) {
-  const isMobile = window.innerWidth <= 779;
-  
-  info_buttons.forEach(b => b.classList.remove('active'));
-  info_contents.forEach(c => {
-    c.classList.remove('active');
-    if (!isMobile) {
-      c.classList.remove('rounded-tl');
-      c.classList.remove('square-tr');
-    }
+  const newsItems = Array.from(document.querySelectorAll('.news-page_item'));
+  const paginationInfo = document.querySelector('.pagination-info');
+
+  function setFilter(type) {
+    currentFilter = type;
+    currentPage = 1;
+    
+    filterBtns.forEach(btn => btn.classList.remove('active'));
+    if (type === 'all') document.getElementById('all_news')?.classList.add('active');
+    if (type === 'updates') document.getElementById('updates')?.classList.add('active');
+    if (type === 'laws') document.getElementById('laws')?.classList.add('active');
+    
+    render();
+  }
+
+  // Переопределяем обработчики для news.html (с preventDefault)
+  document.getElementById('all_news')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    setFilter('all');
+  });
+  document.getElementById('updates')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    setFilter('updates');
+  });
+  document.getElementById('laws')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    setFilter('laws');
   });
 
-  btn.classList.add('active');
-  const contentId = btn.id.replace('info_', 'info_content_');
-  const targetContent = document.getElementById(contentId);
-  
-  if (targetContent) {
-    targetContent.classList.add('active');
+  function getFilteredItems() {
+    if (currentFilter === 'all') return newsItems;
+    return newsItems.filter(item => {
+      const tag = item.querySelector('.news-page_tags')?.textContent.trim().toLowerCase() || '';
+      if (currentFilter === 'updates') return tag.includes('обновление');
+      if (currentFilter === 'laws') return tag.includes('законодательство');
+      return true;
+    });
+  }
+
+  function renderPagination(totalPages) {
+    let html = '';
+    html += `<a href="#" class="pagination-arrow" data-dir="prev">Назад</a>`;
     
-    if (!isMobile) {
-      if (btn.id !== 'info_why') {
-        targetContent.classList.add('rounded-tl');
-      }
-      if (btn.id === 'info_when') {
-        targetContent.classList.add('square-tr');
+    const maxVisible = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+    if (endPage - startPage < maxVisible - 1) startPage = Math.max(1, endPage - maxVisible + 1);
+
+    if (startPage > 1) {
+      html += `<a href="#" class="pagination-page" data-page="1">1</a>`;
+      if (startPage > 2) html += `<span class="pagination-dots">...</span>`;
+    }
+    for (let i = startPage; i <= endPage; i++) {
+      html += `<a href="#" class="pagination-page ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</a>`;
+    }
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) html += `<span class="pagination-dots">...</span>`;
+      html += `<a href="#" class="pagination-page" data-page="${totalPages}">${totalPages}</a>`;
+    }
+    html += `<a href="#" class="pagination-arrow" data-dir="next">Далее</a>`;
+    paginationContainer.innerHTML = html;
+
+    paginationContainer.querySelectorAll('.pagination-page').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentPage = parseInt(el.dataset.page);
+        render();
+        newsList.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    paginationContainer.querySelectorAll('.pagination-arrow').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dir = el.dataset.dir;
+        if (dir === 'prev' && currentPage > 1) currentPage--;
+        else if (dir === 'next' && currentPage < totalPages) currentPage++;
+        else return;
+        render();
+        newsList.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+
+  function render() {
+    const filtered = getFilteredItems();
+    const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+    currentPage = Math.min(currentPage, totalPages);
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageItems = filtered.slice(start, end);
+
+    newsItems.forEach(item => item.style.display = 'none');
+    pageItems.forEach(item => item.style.display = 'flex');
+
+    const showStart = filtered.length > 0 ? start + 1 : 0;
+    const showEnd = Math.min(end, filtered.length);
+    paginationInfo.textContent = `Показано ${showStart}-${showEnd} из ${filtered.length}`;
+    renderPagination(totalPages);
+
+    // Убираем границу у последнего видимого элемента (только для ≤1200px)
+    if (window.innerWidth <= 1200) {
+      const visibleItems = newsItems.filter(item => item.style.display !== 'none');
+      visibleItems.forEach(item => {
+        item.style.borderBottom = '1px solid rgba(0, 0, 0, 0.15)';
+        item.style.paddingBottom = window.innerWidth <= 779 ? '1.5rem' : '2rem';
+      });
+      if (visibleItems.length > 0) {
+        const last = visibleItems[visibleItems.length - 1];
+        last.style.borderBottom = 'none';
+        last.style.paddingBottom = '0';
       }
     }
   }
-}
 
-  info_buttons.forEach(btn => {
-    btn.addEventListener('click', () => updateContentState(btn));
-  });
+  // Запуск
+  setFilter('all');
 
+  // Пересчёт при ресайзе
   window.addEventListener('resize', () => {
-    const activeBtn = document.querySelector('.information_button.active');
-    if (activeBtn) {
-      updateContentState(activeBtn);
-    }
-  });
-
-  // Кнопки развёрток Документаций
-
-  const items = document.querySelectorAll('.documentation_item');
-
-  items.forEach(item => {
-    const btn = item.querySelector('.documentation_button');
-    const container = item.querySelector('.documentation_container');
-
-    btn.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-
-      items.forEach(otherItem => {
-        otherItem.classList.remove('active');
-        otherItem.querySelector('.documentation_container').classList.remove('active');
-      });
-
-      if (!isActive) {
-        item.classList.add('active');
-        container.classList.add('active');
-      }
-    });
-  });
-
-  // Кнопки раздела FAQ
-
-  const questionItems = document.querySelectorAll('.question_item');
-
-  questionItems.forEach(item => {
-    const button = item.querySelector('.question_button');
-    
-    button.addEventListener('click', () => {
-      const isOpen = item.classList.contains('active');
-      
-      questionItems.forEach(i => i.classList.remove('active'));
-      
-      if (!isOpen) {
-        item.classList.add('active');
-      }
-    });
-  });
-
-  // Расширение поля для Текста обращения
-
-  const textarea = document.getElementById('form_text');
-  textarea.addEventListener('input', function() {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
+    if (window.innerWidth <= 1200) render();
   });
 
 });
