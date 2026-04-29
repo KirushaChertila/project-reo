@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ============================================
-  // 1. МЕНЮ (работает на ВСЕХ страницах)
+  // 1. МЕНЮ
   // ============================================
   
   const header = document.querySelector('header');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================
-  // 2. ПОДСВЕТКА АКТИВНОГО ПУНКТА МЕНЮ (на всех страницах)
+  // 2. ПОДСВЕТКА АКТИВНОГО ПУНКТА МЕНЮ
   // ============================================
 
   const getActivePageName = () => {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
-  // 3. КНОПКИ ФИЛЬТРА НОВОСТЕЙ (на всех страницах)
+  // 3. КНОПКИ ФИЛЬТРА НОВОСТЕЙ
   // ============================================
   
   const filterBtns = document.querySelectorAll('.news_button');
@@ -84,16 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const isNewsPage = document.querySelector('.news-page_list');
       
       if (!isNewsPage) {
-        // На главной — переход на страницу новостей
         window.location.href = 'news.html';
         return;
       }
-      // На news.html — фильтрация (обрабатывается ниже)
     });
   });
 
   // ============================================
-  // 4. ТАБЫ "ПОЛЕЗНАЯ ИНФОРМАЦИЯ" (если есть на странице)
+  // 4. ТАБЫ "ПОЛЕЗНАЯ ИНФОРМАЦИЯ"
   // ============================================
   
   const info_buttons = document.querySelectorAll('.information_button');
@@ -135,13 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (activeBtn) updateContentState(activeBtn);
     });
     
-    // Инициализация
     const firstActive = document.querySelector('.information_button.active');
     if (firstActive) updateContentState(firstActive);
   }
 
   // ============================================
-  // 5. АККОРДЕОН "ДОКУМЕНТАЦИЯ" (если есть на странице)
+  // 5. АККОРДЕОН "ДОКУМЕНТАЦИЯ"
   // ============================================
   
   const docItems = document.querySelectorAll('.documentation_item');
@@ -155,14 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
           const isActive = item.classList.contains('active');
 
-          // Закрываем все
           docItems.forEach(otherItem => {
             otherItem.classList.remove('active');
             const otherContainer = otherItem.querySelector('.documentation_container');
             if (otherContainer) otherContainer.classList.remove('active');
           });
 
-          // Открываем текущий, если он был закрыт
           if (!isActive) {
             item.classList.add('active');
             container.classList.add('active');
@@ -173,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================
-  // 6. FAQ АККОРДЕОН (если есть на странице)
+  // 6. FAQ АККОРДЕОН
   // ============================================
   
   const questionItems = document.querySelectorAll('.question_item');
@@ -186,10 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
           const isOpen = item.classList.contains('active');
           
-          // Закрываем все
           questionItems.forEach(i => i.classList.remove('active'));
           
-          // Открываем текущий, если он был закрыт
           if (!isOpen) {
             item.classList.add('active');
           }
@@ -199,18 +192,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================
-  // 7. ПАГИНАЦИЯ НОВОСТЕЙ (только если есть .news-page_list)
+  // 7. ПАГИНАЦИЯ НОВОСТЕЙ
   // ============================================
 
   const newsList = document.querySelector('.news-page_list');
   const paginationContainer = document.querySelector('.pagination-controls');
   
   if (!newsList || !paginationContainer) {
-    // Не на странице новостей с пагинацией — ничего не делаем
     return; 
   }
-  
-  // === Дальше код выполняется ТОЛЬКО на news.html ===
   
   // Карусель кнопок фильтра на мобильном
   const newsNav = document.querySelector('.news_nav');
@@ -225,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(updateScrollHint, 100);
 
   // === ФИЛЬТР И ПАГИНАЦИЯ ===
+
   const ITEMS_PER_PAGE = 10;
   let currentPage = 1;
   let currentFilter = 'all';
@@ -244,7 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
     render();
   }
 
-  // Переопределяем обработчики для news.html (с preventDefault)
   document.getElementById('all_news')?.addEventListener('click', (e) => {
     e.preventDefault();
     setFilter('all');
@@ -328,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
     paginationInfo.textContent = `Показано ${showStart}-${showEnd} из ${filtered.length}`;
     renderPagination(totalPages);
 
-    // Убираем границу у последнего видимого элемента (только для ≤1200px)
     if (window.innerWidth <= 1200) {
       const visibleItems = newsItems.filter(item => item.style.display !== 'none');
       visibleItems.forEach(item => {
@@ -346,7 +335,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Запуск
   setFilter('all');
 
-  // Пересчёт при ресайзе
   window.addEventListener('resize', () => {
     if (window.innerWidth <= 1200) render();
   });
