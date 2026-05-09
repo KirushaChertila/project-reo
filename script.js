@@ -192,7 +192,90 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================
-  // 7. ПАГИНАЦИЯ НОВОСТЕЙ
+  // 7. API АККОРДЕОН
+  // ============================================
+
+  const asideNavBars = document.querySelectorAll('.aside_nav-bar');
+  asideNavBars.forEach(bar => {
+    const button = bar.querySelector('.aside_nav-button');
+    const list = bar.querySelector('ul');
+    if (!button || !list) return;
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      asideNavBars.forEach(otherBar => {
+        if (otherBar !== bar) otherBar.classList.remove('active');
+      });
+      bar.classList.toggle('active');
+    });
+  });
+
+  // Авто-подсветка по URL
+  const currentPath = window.location.pathname.split('/').pop() || '';
+  const currentHash = window.location.hash.replace('#', '');
+  document.querySelectorAll('.aside_nav-option').forEach(link => {
+    const href = link.getAttribute('href') || '';
+    const linkPath = href.split('/').pop().split('?')[0] || '';
+    const linkHash = href.includes('#') ? href.split('#')[1] : '';
+    if ((linkPath === currentPath || linkPath === '') && (linkHash === currentHash || !linkHash)) {
+      link.classList.add('active');
+      const parentBar = link.closest('.aside_nav-bar');
+      if (parentBar) parentBar.classList.add('active');
+    }
+  });
+
+  // ============================================
+  // 8. КОПИРОВАНИЕ КОДА ИЗ API
+  // ============================================
+
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.code-copy-btn');
+    if (!btn) return;
+
+    const codeArea = btn.closest('.code_area');
+    const codeEl = codeArea?.querySelector('.code-content code, .code-content');
+    if (!codeEl) return;
+
+    const text = codeEl.textContent.trim();
+    const originalHTML = btn.innerHTML;
+
+    try {
+
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      }
+
+      else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+
+      btn.classList.add('success');
+      btn.innerHTML = '<span class="copy-text">Скопировано</span>';
+
+      if (btn._resetTimer) clearTimeout(btn._resetTimer);
+      
+      btn._resetTimer = setTimeout(() => {
+        btn.classList.remove('success');
+        btn.innerHTML = originalHTML;
+      }, 2000);
+
+    } 
+    
+    catch (err) {
+      console.error('Ошибка копирования:', err);
+    }
+
+  });
+
+  // ============================================
+  // 9. ПАГИНАЦИЯ НОВОСТЕЙ
   // ============================================
 
   const newsList = document.querySelector('.news-page_list');
